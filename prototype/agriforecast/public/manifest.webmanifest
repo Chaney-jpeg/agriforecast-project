@@ -1,0 +1,12 @@
+{
+  "name": "AgriForecast",
+  "short_name": "AgriForecast",
+  "description": "Weather-aware farm decision support for smallholder farmers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f8ee",
+  "theme_color": "#2f6b2f",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "agriforecast-project",
+  "private": true,
+  "workspaces": [
+    "prototype/agriforecast"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=agriforecast -- --hostname 0.0.0.0",
+    "build": "npm run build --workspace=agriforecast",
+    "start": "npm run start --workspace=agriforecast -- --hostname 0.0.0.0",
+    "test": "npm run test --workspace=agriforecast"
+  }
+}

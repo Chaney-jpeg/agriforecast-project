@@ -1,0 +1,185 @@
+{
+  "catalog_version": "1.0",
+  "catalogued_on": "2026-10-12",
+  "provider": "iShamba",
+  "provider_homepage": "https://ishamba.com/",
+  "catalogue_url": "https://ishamba.com/farming-info",
+  "usage_note": "Metadata and links only. Confirm permission, licensing, currency, and suitability before storing full text, redistributing material, or using it in a public/commercial RAG service.",
+  "sources": [
+    {
+      "source_id": "ishamba-tomato-guide",
+      "title": "Tomato farming guideline",
+      "url": "https://ishamba.com/pdf/iShamba_farming_guideline_Tomato.pdf",
+      "format": "pdf",
+      "topics": ["crop", "tomato", "nursery", "planting", "crop management"],
+      "source_type": "production_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested"
+    },
+    {
+      "source_id": "ishamba-dry-bean-guide",
+      "title": "Bean farming guide",
+      "url": "https://ishamba.com/documents/60/Bean_farming_.pdf",
+      "format": "pdf",
+      "topics": ["crop", "dry beans", "planting", "intercropping", "soil fertility"],
+      "source_type": "production_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested"
+    },
+    {
+      "source_id": "ishamba-avocado-guide",
+      "title": "Avocado farming",
+      "url": "https://ishamba.com/pdf/AvocadoFarming.pdf",
+      "format": "pdf",
+      "topics": ["crop", "avocado", "orchard establishment", "irrigation", "pruning"],
+      "source_type": "production_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested"
+    },
+    {
+      "source_id": "ishamba-mango-guide",
+      "title": "Mango farming",
+      "url": "https://ishamba.com/pdf/Mango_Farming.pdf",
+      "format": "pdf",
+      "topics": ["crop", "mango", "orchard establishment", "varieties", "grafting"],
+      "source_type": "production_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested"
+    },
+    {
+      "source_id": "ishamba-drip-irrigation-installation",
+      "title": "Drip irrigation system installation",
+      "url": "https://ishamba.com/documents/55/iShamba_farming_guideline_Drip_Irrigation_Installation.pdf",
+      "format": "pdf",
+      "topics": ["irrigation", "drip irrigation", "water management"],
+      "source_type": "technical_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested"
+    },
+    {
+      "source_id": "ishamba-compost-manure",
+      "title": "Preparation of compost manure",
+      "url": "https://ishamba.com/pdf/COMPOSTING_WRITE-UP.pdf",
+      "format": "pdf",
+      "topics": ["soil health", "compost", "organic matter", "manure"],
+      "source_type": "technical_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested"
+    },
+    {
+      "source_id": "ishamba-tomato-pepper-spray-programme",
+      "title": "Spray programme for tomatoes and peppers",
+      "url": "https://ishamba.com/pdf/Tomatoes_and_Pepper_spray_programme-1-1.pdf",
+      "format": "pdf",
+      "topics": ["crop protection", "tomato", "pepper", "spray programme"],
+      "source_type": "crop_protection_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested",
+      "review_note": "Contains pesticide products, active ingredients, rates, intervals, and pre-harvest intervals. Do not surface operational spray recommendations until a qualified reviewer verifies current Kenyan registrations and product labels."
+    },
+    {
+      "source_id": "ishamba-vegetable-spray-programme",
+      "title": "Spray programme for vegetables (cauliflower, broccoli, kale, cabbage; indexed copy also contains onion tables)",
+      "url": "https://ishamba.com/pdf/SPRAY_PROGRAMME_cauliflower_broccolli_KalesCabbage_3.pdf",
+      "format": "pdf",
+      "topics": ["crop protection", "vegetables", "spray programme"],
+      "source_type": "crop_protection_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested",
+      "review_note": "Potentially mixed or mislabeled crop tables; inspect the original document and obtain expert review before any RAG use."
+    },
+    {
+      "source_id": "ishamba-dairy-cattle-production",
+      "title": "Dairy cattle production",
+      "url": "https://ishamba.com/pdf/DAIRYCOWPRODUCTION.pdf",
+      "format": "pdf",
+      "topics": ["livestock", "dairy cattle", "feeding", "minerals"],
+      "source_type": "production_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested",
+      "review_note": "Contains product-specific feed/mineral recommendations; veterinary/nutrition review required before surfacing as advice."
+    },
+    {
+      "source_id": "ishamba-indigenous-chicken-production",
+      "title": "Indigenous chicken production",
+      "url": "https://ishamba.com/documents/56/iShamba_farming_guideline_Indigenous_Chicken.pdf",
+      "format": "pdf",
+      "topics": ["livestock", "poultry", "indigenous chicken", "housing", "production systems"],
+      "source_type": "production_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested"
+    },
+    {
+      "source_id": "ishamba-meat-goat-rearing",
+      "title": "Meat goats rearing",
+      "url": "https://ishamba.com/pdf/Meat_Goats_Rearing_1-1.pdf",
+      "format": "pdf",
+      "topics": ["livestock", "goats", "meat goat", "breeds", "housing"],
+      "source_type": "production_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested"
+    },
+    {
+      "source_id": "ishamba-fish-farming",
+      "title": "Fish farming",
+      "url": "https://ishamba.com/pdf/Fish_Farming.pdf",
+      "format": "pdf",
+      "topics": ["aquaculture", "fish", "production systems", "tilapia", "catfish"],
+      "source_type": "production_guide",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested"
+    },
+    {
+      "source_id": "ishamba-farmer-insights",
+      "title": "iShamba Farmer Insights",
+      "url": "https://ishamba.com/pdf/60dB-iShamba.pdf",
+      "format": "pdf",
+      "topics": ["farmer outcomes", "advisory services", "livestock", "climate resilience"],
+      "source_type": "impact_report",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogued_not_ingested",
+      "rag_use": "Background/context only; not an agronomic instruction source."
+    },
+    {
+      "source_id": "ishamba-blog-index",
+      "title": "iShamba blog and articles index",
+      "url": "https://ishamba.com/blog",
+      "format": "web",
+      "topics": ["agro-weather", "climate services", "livestock", "farmer services"],
+      "source_type": "article_index",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogue_only"
+    },
+    {
+      "source_id": "ishamba-farming-info-catalogue",
+      "title": "iShamba farming information catalogue",
+      "url": "https://ishamba.com/farming-info",
+      "format": "web",
+      "topics": ["crop guides", "livestock guides", "spray programme", "drip irrigation", "compost", "hydroponics", "nursery"],
+      "source_type": "catalogue",
+      "language": "en",
+      "geography": "Kenya",
+      "rag_status": "catalogue_only",
+      "catalogue_topics": {
+        "crops_listed": ["Avocado", "Banana", "Button Mushroom", "Capsicum", "Carrots", "Courgette", "Cucumber", "Dry Beans", "Fish", "Garlic", "Ginger", "Lettuce", "Mango", "Onion", "Passion Fruits", "Irish Potato", "Sorghum", "Soya Beans", "Tomato", "Turmeric", "Vegetables", "Watermelon"],
+        "livestock_and_farm_products_listed": ["Boma Rhodes", "Broiler Feed", "Broiler Starter Mash", "Calf Management", "Chicken Housing", "Dairy Cow", "Dairy Goat", "Goat Housing", "Growers Mash", "Indigenous Chicken", "Kienyeji Chicken", "Kienyeji Layer Feed Formulation", "Layers Mash", "Meat Goat", "Pigsty", "Pig Production", "Pig", "Silage", "Rabbit", "Sheep", "Chicken Vaccination"],
+        "spray_topics": ["Spray Programme", "Tomatoes and Pepper Spray"],
+        "other_topics": ["Drip Irrigation", "Compost Tea Fertilizer", "Hydroponics", "Vegetable Nursery", "Compost", "Compost Manure"]
+      }
+    }
+  ]
+}
