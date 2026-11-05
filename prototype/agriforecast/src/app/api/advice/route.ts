@@ -34,7 +34,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'A valid location is required' }, { status: 400 });
   }
 
-  const plantingDate = typeof c.plantingDate === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(c.plantingDate) ? c.plantingDate : undefined;
+  const plantingDateRaw = typeof c.plantingDate === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(c.plantingDate) ? c.plantingDate : undefined;
+  // Validate calendar correctness (e.g. reject 2026-02-30).
+  const plantingDate = plantingDateRaw && !isNaN(Date.parse(plantingDateRaw + 'T00:00:00Z')) ? plantingDateRaw : undefined;
   const ctx: FarmContext = {
     lat, lon,
     elevation: Number.isFinite(Number(c.elevation)) && c.elevation !== '' && c.elevation != null ? Number(c.elevation) : undefined,
@@ -49,8 +51,15 @@ export async function POST(req: Request) {
   };
 
   const scenario = pick<DemoScenario>(body.demo, SCENARIOS);
+  let weather;
   try {
-    const weather = scenario ? demoWeather(scenario, ctx.elevation ?? 1800) : await getWeather(lat, lon);
+    weather = scenario ? demoWeather(scenario, ctx.elevation ?? 1800) : await getWeather(lat, lon);
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return NextResponse.json({ error: 'weather_unavailable', detail: message }, { status: 502 });
+  }
+
+  try {
     const advice = advise(topic, ctx, weather);
 
     // Keep the response small for low-bandwidth users: send only what the chart needs.
@@ -69,6 +78,6 @@ export async function POST(req: Request) {
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error';
-    return NextResponse.json({ error: 'weather_unavailable', detail: message }, { status: 502 });
+    return NextResponse.json({ error: 'advice_error', detail: message }, { status: 500 });
   }
 }

@@ -3,19 +3,56 @@ import type { Lang } from './types';
 export interface County { name: string; lat: number; lon: number }
 
 // Approximate county-town coordinates for quick start (no GPS needed).
+// Covers all 47 Kenya counties; coordinates point to the county headquarters
+// or the largest town in that county.
 export const COUNTIES: County[] = [
-  { name: 'Nakuru', lat: -0.3031, lon: 36.08 },
-  { name: 'Uasin Gishu (Eldoret)', lat: 0.5143, lon: 35.2698 },
-  { name: 'Kiambu', lat: -1.1714, lon: 36.8356 },
-  { name: 'Nyeri', lat: -0.4201, lon: 36.9476 },
-  { name: 'Meru', lat: 0.048, lon: 37.6559 },
+  { name: 'Baringo', lat: 0.4736, lon: 35.9753 },
+  { name: 'Bomet', lat: -0.7817, lon: 35.3419 },
+  { name: 'Bungoma', lat: 0.5695, lon: 34.5584 },
+  { name: 'Busia', lat: 0.4607, lon: 34.1106 },
+  { name: 'Elgeyo-Marakwet', lat: 0.8882, lon: 35.5026 },
   { name: 'Embu', lat: -0.5389, lon: 37.4596 },
-  { name: 'Machakos', lat: -1.5177, lon: 37.2634 },
-  { name: 'Kitui', lat: -1.3667, lon: 38.0106 },
+  { name: 'Garissa', lat: -0.4532, lon: 39.6461 },
+  { name: 'Homa Bay', lat: -0.5274, lon: 34.4571 },
+  { name: 'Isiolo', lat: 0.3536, lon: 37.5826 },
+  { name: 'Kajiado', lat: -1.8524, lon: 36.7820 },
   { name: 'Kakamega', lat: 0.2827, lon: 34.7519 },
-  { name: 'Kisumu', lat: -0.0917, lon: 34.768 },
-  { name: 'Kajiado', lat: -1.8524, lon: 36.782 },
+  { name: 'Kericho', lat: -0.3692, lon: 35.2862 },
+  { name: 'Kiambu', lat: -1.1714, lon: 36.8356 },
+  { name: 'Kilifi', lat: -3.6305, lon: 39.8499 },
+  { name: 'Kirinyaga', lat: -0.6588, lon: 37.3838 },
+  { name: 'Kisii', lat: -0.6817, lon: 34.7665 },
+  { name: 'Kisumu', lat: -0.0917, lon: 34.7680 },
+  { name: 'Kitui', lat: -1.3667, lon: 38.0106 },
+  { name: 'Kwale', lat: -4.1730, lon: 39.4521 },
+  { name: 'Laikipia', lat: 0.3604, lon: 36.7820 },
+  { name: 'Lamu', lat: -2.2694, lon: 40.9021 },
+  { name: 'Machakos', lat: -1.5177, lon: 37.2634 },
+  { name: 'Makueni', lat: -1.8038, lon: 37.6238 },
+  { name: 'Mandera', lat: 3.9366, lon: 41.8670 },
+  { name: 'Marsabit', lat: 2.3284, lon: 37.9948 },
+  { name: 'Meru', lat: 0.0480, lon: 37.6559 },
+  { name: 'Migori', lat: -1.0634, lon: 34.4731 },
+  { name: 'Mombasa', lat: -4.0435, lon: 39.6682 },
+  { name: "Murang'a", lat: -0.7236, lon: 37.1528 },
+  { name: 'Nairobi', lat: -1.2921, lon: 36.8219 },
+  { name: 'Nakuru', lat: -0.3031, lon: 36.0800 },
+  { name: 'Nandi', lat: 0.1839, lon: 35.1000 },
+  { name: 'Narok', lat: -1.0859, lon: 35.8694 },
+  { name: 'Nyamira', lat: -0.5632, lon: 34.9350 },
+  { name: 'Nyandarua', lat: -0.1815, lon: 36.3615 },
+  { name: 'Nyeri', lat: -0.4201, lon: 36.9476 },
+  { name: 'Samburu', lat: 1.0639, lon: 37.0827 },
+  { name: 'Siaya', lat: -0.0607, lon: 34.2880 },
+  { name: 'Taita-Taveta', lat: -3.3160, lon: 38.4835 },
+  { name: 'Tana River', lat: -1.6823, lon: 40.0218 },
+  { name: 'Tharaka-Nithi', lat: -0.2974, lon: 37.8724 },
+  { name: 'Trans Nzoia', lat: 1.0195, lon: 35.0010 },
   { name: 'Turkana (Lodwar)', lat: 3.1191, lon: 35.5973 },
+  { name: 'Uasin Gishu (Eldoret)', lat: 0.5143, lon: 35.2698 },
+  { name: 'Vihiga', lat: 0.0736, lon: 34.7235 },
+  { name: 'Wajir', lat: 1.7471, lon: 40.0573 },
+  { name: 'West Pokot', lat: 1.2541, lon: 35.1180 },
 ];
 
 type Dict = Record<string, { en: string; sw: string }>;
@@ -93,6 +130,8 @@ const D: Dict = {
   disclaimer: { en: 'This is decision support, not a guarantee. Weather forecasts are uncertain, and your own observations and your extension officer know your farm best.', sw: 'Huu ni msaada wa kufanya maamuzi, si hakikisho. Utabiri wa hali ya hewa hauna uhakika kamili, na uchunguzi wako na afisa ugani wanajua shamba lako vyema.' },
   outsideKenya: { en: 'This location is outside Kenya. The rules were written with Kenyan conditions in mind, so treat the advice with extra caution.', sw: 'Mahali hapa ni nje ya Kenya. Kanuni ziliandikwa kwa kuzingatia hali za Kenya, kwa hiyo chukulia ushauri kwa tahadhari zaidi.' },
   weatherDown: { en: 'The weather service could not be reached. Showing your last saved advice if there is one.', sw: 'Huduma ya hali ya hewa haipatikani. Inaonyesha ushauri wako wa mwisho uliohifadhiwa kama upo.' },
+  noSavedAdvice: { en: 'No saved advice found. Please try again when the network is available.', sw: 'Hakuna ushauri uliohifadhiwa. Tafadhali jaribu tena mtandao ukipatikana.' },
+  adviceError: { en: 'There was an error generating advice. Please try again.', sw: 'Hitilafu ilitokea wakati wa kutoa ushauri. Tafadhali jaribu tena.' },
   savedResult: { en: 'Saved result from', sw: 'Matokeo yaliyohifadhiwa ya' },
   needLocation: { en: 'Please choose a county or use your location first.', sw: 'Tafadhali chagua kaunti au tumia mahali ulipo kwanza.' },
   needCrop: { en: 'Choose a crop for this topic to get specific advice, or continue to see what we need.', sw: 'Chagua zao ili upate ushauri maalum.' },
@@ -100,7 +139,18 @@ const D: Dict = {
 
 export const t = (key: string, lang: Lang): string => D[key]?.[lang] ?? key;
 
+// Maps FarmContext field keys to their translation keys in D.
+// Used by ResultCard to display human-readable field names in the missing-inputs list.
 export const FIELD_LABEL: Record<string, string> = {
-  crop: 'crop', plantingDate: 'plantingDate', soil: 'soil', variety: 'variety',
-  species: 'species', shade: 'shade', waterSource: 'waterSource', pasture: 'pasture',
+  crop: 'crop',
+  plantingDate: 'plantingDate',
+  soil: 'soil',
+  variety: 'variety',
+  species: 'species',
+  shade: 'shade',
+  waterSource: 'waterSource',
+  pasture: 'pasture',
 };
+
+// Convenience: resolve a field key to its translated label.
+export const fieldLabel = (field: string, lang: Lang): string => t(FIELD_LABEL[field] ?? field, lang);

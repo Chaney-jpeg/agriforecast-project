@@ -283,3 +283,270 @@ button { color: inherit; }
   .advice-preview { align-items: flex-start; }
   .advice-preview .badge { flex: 0 0 auto; }
 }
+
+/* ============================================================
+   Seed data / populated-section styles
+   ============================================================ */
+
+.seed-layout {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.seed-banner {
+  padding: 9px 12px;
+  background: #f0f6e9;
+  border: 1px solid #c8deb8;
+  border-radius: 3px;
+  font-size: 11px;
+  color: var(--farm-green-dark);
+}
+.seed-banner.api-banner {
+  background: #fff7e0;
+  border-color: #ecd58a;
+  color: #5a4b1f;
+}
+
+.seed-card { padding: 16px 18px; }
+.seed-card h3 { margin: 0 0 12px; font-size: 14px; font-weight: 650; }
+.seed-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.seed-card-header h3 { margin: 0; }
+
+/* Tables */
+.seed-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.seed-table th {
+  text-align: left; padding: 6px 8px; font-size: 10px; font-weight: 700;
+  color: var(--farm-muted); border-bottom: 1px solid var(--farm-border);
+  text-transform: uppercase; letter-spacing: .5px;
+}
+.seed-table td { padding: 8px 8px; border-bottom: 1px solid #f0f1f2; vertical-align: top; }
+.seed-table tr:last-child td { border-bottom: 0; }
+.seed-table.full { min-width: 0; }
+.seed-table .muted { color: var(--farm-muted); }
+.seed-table .small { font-size: 10.5px; }
+.row-warn td { background: #fff8f0; }
+.row-done td { opacity: 0.55; text-decoration: line-through; }
+
+/* Status pills */
+.pill {
+  display: inline-block; padding: 2px 8px; border-radius: 99px;
+  font-size: 10px; font-weight: 700; white-space: nowrap;
+}
+.pill-active, .pill-operational, .pill-ready { background: #e6f4e0; color: #2f6b2f; }
+.pill-pending, .pill-planned { background: #eef3ff; color: #3b5b8c; }
+.pill-in-progress { background: #fff7e0; color: #8a6d00; }
+.pill-maintenance { background: #fff0e6; color: #b45309; }
+.pill-repair, .pill-overdue, .pill-failed { background: #fdecea; color: #b42318; }
+.pill-harvested, .pill-inactive, .pill-done { background: #f2f3f5; color: #626970; }
+
+/* Dashboard KPIs */
+.dash-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.kpi {
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid var(--farm-border);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.kpi-val { font-size: 22px; font-weight: 700; color: var(--farm-ink); line-height: 1.1; }
+.kpi-label { font-size: 10px; color: var(--farm-muted); text-transform: uppercase; letter-spacing: .5px; }
+.kpi-warn .kpi-val { color: #b42318; }
+
+.dash-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.dash-hint {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.dash-hint span { font-size: 26px; }
+.dash-hint strong { font-size: 13px; }
+.dash-hint p { margin: 3px 0 0; color: var(--farm-muted); font-size: 11px; }
+.dash-hint .secondary { margin-left: auto; flex: 0 0 auto; }
+
+/* Alert rows */
+.alert-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f1f2;
+  font-size: 12px;
+}
+.alert-row:last-child { border-bottom: 0; }
+
+/* Link buttons */
+.link-btn {
+  background: transparent;
+  border: 0;
+  color: var(--farm-green-dark);
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+  padding: 6px 0 0;
+  display: block;
+}
+.link-btn:hover { text-decoration: underline; }
+
+/* Fields grid */
+.fields-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.field-card { padding: 14px 16px; }
+.field-card > div:first-of-type { margin-bottom: 10px; font-size: 14px; }
+.field-icon { float: right; margin-left: 8px; color: #bdab34; font-size: 22px; }
+
+/* Task group heading */
+.group-heading {
+  margin: 12px 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--farm-muted);
+}
+
+/* NDVI bars */
+.ndvi-bar-group { display: flex; flex-direction: column; gap: 6px; margin: 10px 0; }
+.ndvi-row { display: flex; align-items: center; gap: 8px; font-size: 11px; }
+.ndvi-label { width: 80px; color: var(--farm-muted); flex: 0 0 80px; }
+.ndvi-track { flex: 1; height: 10px; background: #eef0f2; border-radius: 99px; overflow: hidden; }
+.ndvi-fill { height: 100%; border-radius: 99px; transition: width .3s; }
+.ndvi-val { width: 32px; text-align: right; font-weight: 650; }
+
+/* Satellite / prescription / yield map placeholder */
+.img-placeholder, .map-placeholder {
+  margin-top: 10px;
+  min-height: 100px;
+  background: #f5f6f8;
+  border: 1px dashed #d0d3d7;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--farm-muted);
+  padding: 16px;
+  text-align: center;
+}
+.img-placeholder span, .map-placeholder span { font-size: 32px; }
+
+/* Soil grid */
+.soil-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 8px;
+  margin: 8px 0 10px;
+}
+.soil-stat {
+  padding: 8px 10px;
+  background: #f7f9f3;
+  border: 1px solid var(--farm-border);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.soil-val { font-size: 16px; font-weight: 700; }
+.soil-label { font-size: 10px; color: var(--farm-muted); text-transform: uppercase; letter-spacing: .4px; }
+
+/* Notes */
+.note-compose { margin-bottom: 12px; }
+.note-compose textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--farm-border);
+  border-radius: 4px;
+  font-size: 13px;
+  resize: vertical;
+  font-family: inherit;
+}
+.note-card { padding: 12px 16px; }
+.note-meta { font-size: 11px; }
+
+/* Notifications */
+.notif-badge {
+  margin-left: auto;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 99px;
+  background: #b42318;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+.notif-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f1f2;
+  cursor: pointer;
+  font-size: 12px;
+}
+.notif-row:last-child { border-bottom: 0; }
+.notif-row.notif-read { opacity: 0.5; }
+.notif-dot {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+.notif-dot.alert { background: #b42318; }
+.notif-dot.reminder { background: #8a6d00; }
+.notif-dot.info { background: #3b5b8c; }
+
+/* Profile */
+.profile-header { display: flex; align-items: center; gap: 14px; }
+.profile-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--farm-green);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex: 0 0 52px;
+}
+
+/* Simple list */
+.simple-list { margin: 4px 0 10px; padding-left: 18px; font-size: 12px; }
+.simple-list li { margin-bottom: 4px; }
+
+/* Responsive tweaks for seed sections */
+@media (max-width: 760px) {
+  .dash-cols { grid-template-columns: 1fr; }
+  .fields-grid { grid-template-columns: 1fr; }
+  .seed-table.full { font-size: 11px; }
+  .dash-kpis { grid-template-columns: repeat(2, 1fr); }
+  .soil-grid { grid-template-columns: repeat(3, 1fr); }
+}

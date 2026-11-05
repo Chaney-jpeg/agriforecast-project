@@ -42,7 +42,12 @@ export function livestockAdvice(ctx: FarmContext, w: WeatherBundle): Advice {
   const species = ctx.species;
   const week = nextDays(w, 7);
   const peakTemp = Math.max(...week.map((d) => d.tmax));
-  const peakThi = Math.max(...week.map((d) => d.maxThi).filter(Number.isFinite));
+  // Guard against empty array (all maxThi NaN when humidity data is absent):
+  // Math.max() with no args returns -Infinity, which would silently report no
+  // heat stress regardless of temperature. Fall back to NaN so the THI path
+  // explicitly produces idx = 0 only when temperature is also below threshold.
+  const thiValues = week.map((d) => d.maxThi).filter(Number.isFinite);
+  const peakThi = thiValues.length > 0 ? Math.max(...thiValues) : NaN;
 
   let idx: number; // 0 = none, 1 mild, 2 moderate, 3 severe
   let measure: Bi;
@@ -51,8 +56,18 @@ export function livestockAdvice(ctx: FarmContext, w: WeatherBundle): Advice {
     measure = bi(`Hottest forecast day this week: ${round(peakTemp, 1)}°C.`, `Siku yenye joto zaidi wiki hii: ${round(peakTemp, 1)}°C.`);
   } else {
     const b = THI_BANDS[species];
-    idx = peakThi >= b[2] ? 3 : peakThi >= b[1] ? 2 : peakThi >= b[0] ? 1 : 0;
-    measure = bi(`Highest forecast heat index (THI) this week: ${round(peakThi)}; hottest day ${round(peakTemp, 1)}°C.`, `Kiwango cha juu cha joto (THI) wiki hii: ${round(peakThi)}; siku yenye joto zaidi ${round(peakTemp, 1)}°C.`);
+    // If peakThi is NaN (no humidity data), fall back to temperature-only
+    // assessment using the moderate tmax band so we err on the side of caution.
+    if (!Number.isFinite(peakThi)) {
+      idx = peakTemp >= 35 ? 3 : peakTemp >= 30 ? 2 : peakTemp >= 26 ? 1 : 0;
+      measure = bi(
+        `Highest forecast temperature this week: ${round(peakTemp, 1)}°C (humidity data unavailable; THI could not be computed).`,
+        `Halijoto ya juu zaidi wiki hii: ${round(peakTemp, 1)}°C (data ya unyevu haipo; THI haijaweza kukokotolewa).`,
+      );
+    } else {
+      idx = peakThi >= b[2] ? 3 : peakThi >= b[1] ? 2 : peakThi >= b[0] ? 1 : 0;
+      measure = bi(`Highest forecast heat index (THI) this week: ${round(peakThi)}; hottest day ${round(peakTemp, 1)}°C.`, `Kiwango cha juu cha joto (THI) wiki hii: ${round(peakThi)}; siku yenye joto zaidi ${round(peakTemp, 1)}°C.`);
+    }
   }
 
   const levels: Level[] = ['low', 'low', 'moderate', 'severe'];
